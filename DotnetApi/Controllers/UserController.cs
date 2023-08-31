@@ -51,7 +51,8 @@ namespace DotnetApi.Controllers
             return Ok(result);
         }
         [HttpGet("getall")]
-        [CustomAuthorize("A")]
+        // [CustomAuthorize("A")]
+        [CustomAuthorize("U")]
         public async Task<IActionResult> GetAll([FromQuery] Paging paging)
         {
             var result = await _userServices.GetAll(paging);
